@@ -46,11 +46,11 @@
     align-items:center;
   }
   .avatar{
-    width:84px;height:84px;border-radius:8px;
-    background:linear-gradient(135deg,var(--accent),#2eb5ff);
-    display:flex;align-items:center;justify-content:center;
-    color:white;font-weight:700;font-size:26px;
-  }
+    width:84px;
+    height:84px;
+    border-radius:8px;
+    object-fit:cover; /* 自动裁剪填满区域 */
+}
   h1{margin:0;font-size:22px;}
   .sub{color:var(--muted);font-size:13px;margin-top:6px;}
   .section-title{font-weight:700;color:var(--accent);margin-bottom:8px;font-size:15px;}
@@ -70,7 +70,7 @@
   <aside class="left">
     <section class="card" aria-labelledby="personal">
       <header style="display:flex;gap:12px;align-items:center;">
-        <div class="avatar">黄</div>
+        <img class="avatar" src="myphoto.jpg" alt="avatar">
         <div>
           <h1>黄梓皓</h1>
           <div class="sub">AI 应用开发 · 数据驱动 · 多模态工程</div>
