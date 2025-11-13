@@ -1,116 +1,167 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <link rel="icon" type="image/png" href="https://github.com/xiaomaolu/bluueweb3/blob/main/qwa.jpg?raw=true">
-  <title>AI Profile</title>
-  <style>
-    html { color: #1a1a1a; background-color: #fdfdfd; }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body { font-size: 0.9em; padding: 12px; }
-      h1 { font-size: 1.8em; }
-    }
-    @media print {
-      html { background-color: white; }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 { orphans: 3; widows: 3; }
-      h2, h3, h4 { page-break-after: avoid; }
-    }
-    p { margin: 1em 0; }
-    a, a:visited { color: #1a1a1a; }
-    img { max-width: 100%; }
-    h1, h2, h3, h4, h5, h6 { margin-top: 1.4em; }
-    h5, h6 { font-size: 1em; font-style: italic; }
-    h6 { font-weight: normal; }
-    ol, ul { padding-left: 1.7em; margin-top: 1em; }
-    li > ol, li > ul { margin-top: 0; }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-    }
-    pre { margin: 1em 0; overflow: auto; }
-    .sourceCode { background-color: transparent; }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      display: block;
-      overflow-x: auto;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    tbody {
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th, td {
-      padding: 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    code { white-space: pre-wrap; }
-    span.smallcaps { font-variant: small-caps; }
-    div.columns { display: flex; gap: min(4vw, 1.5em); }
-    div.column { flex: auto; overflow-x: auto; }
-    div.hanging-indent { margin-left: 1.5em; text-indent: -1.5em; }
-    ul.task-list { list-style: none; }
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math { display: block; text-align: center; margin: 0.5rem auto; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>黄梓皓 — 简历</title>
+<style>
+  :root{
+    --accent:#0b74de;
+    --muted:#666;
+    --bg:#f7f9fc;
+    --card:#ffffff;
+    --maxw:900px;
+    font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft Yahei", sans-serif;
+  }
+  body{
+    background:var(--bg);
+    margin:20px;
+    color:#222;
+    -webkit-print-color-adjust:exact;
+  }
+  .container{
+    max-width:var(--maxw);
+    margin:0 auto;
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+  }
+  .left{
+    width:320px;
+    flex:0 0 320px;
+  }
+  .right{
+    flex:1;
+  }
+  .card{
+    background:var(--card);
+    padding:18px;
+    border-radius:10px;
+    box-shadow:0 6px 20px rgba(12,30,50,0.06);
+    margin-bottom:18px;
+  }
+  header.card{
+    display:flex;
+    gap:16px;
+    align-items:center;
+  }
+  .avatar{
+    width:84px;height:84px;border-radius:8px;
+    background:linear-gradient(135deg,var(--accent),#2eb5ff);
+    display:flex;align-items:center;justify-content:center;
+    color:white;font-weight:700;font-size:26px;
+  }
+  h1{margin:0;font-size:22px;}
+  .sub{color:var(--muted);font-size:13px;margin-top:6px;}
+  .section-title{font-weight:700;color:var(--accent);margin-bottom:8px;font-size:15px;}
+  .info-row{font-size:14px;margin:6px 0;color:#222;}
+  .muted{color:var(--muted);font-size:13px;}
+  ul{padding-left:18px;margin:6px 0;}
+  .tag{display:inline-block;background:#eef6ff;color:var(--accent);padding:6px 8px;border-radius:6px;font-size:12px;margin:4px 6px 4px 0;}
+  .skill-list{display:flex;flex-wrap:wrap;gap:6px;}
+  @media (max-width:880px){
+    .container{flex-direction:column;padding:10px;}
+    .left{width:100%;flex:auto;}
+  }
+</style>
 </head>
 <body>
+<main class="container" role="main">
+  <aside class="left">
+    <section class="card" aria-labelledby="personal">
+      <header style="display:flex;gap:12px;align-items:center;">
+        <div class="avatar">黄</div>
+        <div>
+          <h1>黄梓皓</h1>
+          <div class="sub">AI 应用开发 · 数据驱动 · 多模态工程</div>
+        </div>
+      </header>
 
-<h1>AI Profile</h1>
-<p><img src="https://orangesai.com/orange.png" alt="avatar" width="100" height="100"></p>
+      <div style="margin-top:12px;">
+        <div class="section-title">个人信息</div>
+        <div class="info-row">出生：2004年7月</div>
+        <div class="info-row">籍贯：广东江门市</div>
+        <div class="info-row">院校：广东技术师范大学（广州）</div>
+        <div class="info-row">邮箱：zawonyee@163.com</div>
+        <div class="info-row">手机：13923082530</div>
+      </div>
+    </section>
 
-<h2>About Me</h2>
-<p>AI 产品经理。</p>
-<p>Obsidian 用户。</p>
-<p>实践卡片笔记法，倡导分享即学习。</p>
+    <section class="card" aria-labelledby="skills">
+      <div class="section-title">技能与能力</div>
+      <div class="skill-list">
+        <span class="tag">Python</span>
+        <span class="tag">SQL</span>
+        <span class="tag">OCR / VLM</span>
+        <span class="tag">LangGraph / LangChain</span>
+        <span class="tag">ECharts / 前端</span>
+        <span class="tag">模型微调 (LoRA)</span>
+        <span class="tag">联邦学习</span>
+        <span class="tag">FAISS / HNSW</span>
+      </div>
+      <div style="margin-top:10px;" class="muted">
+        熟悉网页、小程序、脚本自动化、爬虫；熟练使用Axure、Figma；了解 C / Java 基础；具备数据分析和产品化模型能力。
+      </div>
+    </section>
 
-<h2>Digital Life</h2>
-<p>Twitter <a href="#">@your_handle</a></p>
-<p>Blog <a href="#">your.blog.site</a></p>
-<p>Telegram <a href="#">t.me/your_channel</a></p>
-<p>Newsletter <a href="#">your.substack.com</a></p>
-<p>社交平台 <a href="#">your.profile.link</a></p>
-<p>Github <a href="#">your_github_username</a></p>
+    <section class="card" aria-labelledby="cert">
+      <div class="section-title">证书 & 荣誉</div>
+      <ul>
+        <li>英语：CET-6（六级）</li>
+        <li>蓝桥杯全国总决赛二等奖（智能体设计与开发）</li>
+        <li>第十六届蓝桥杯广东赛区C/C++程序设计一等奖</li>
+        <li>2025 CCPC 广东省银奖；2025 数维杯数学建模一等奖</li>
+        <li>2025“开发者”算法挑战赛 Python 赛道一等奖</li>
+      </ul>
+    </section>
 
-<h2>Contact</h2>
-<p>Email <a href="mailto:your@email.com">your@email.com</a></p>
-<p>Telegram <a href="#">@your_username</a></p>
+    <section class="card" aria-labelledby="pub">
+      <div class="section-title">其它</div>
+      <div class="muted">著作：数字教材《数据采集与预处理技术》（第一作者）</div>
+    </section>
+  </aside>
 
+  <section class="right">
+    <section class="card" aria-labelledby="summary">
+      <div class="section-title">职业摘要</div>
+      <p style="margin:6px 0 0 0;">
+        拥有多模态与大模型工程实战经验（OCR、VLM、文本生成、RAG 与联邦学习场景）。擅长将模型能力产品化，负责端到端系统设计与落地（移动端 + Web + 后端流水线），关注推理成本与系统稳定性。
+      </p>
+    </section>
+
+    <section class="card" aria-labelledby="ability">
+      <div class="section-title">个人能力（基于实习经历提炼）</div>
+
+      <ul>
+        <li><strong>发票智能提取能力：</strong>可独立搭建 OCR + VLM 信息抽取流水线，图像自动结构化率达 95%+，支持多格式发票处理，具备字段映射和批量推理优化能力。</li>
+
+        <li><strong>企业系统智能化经验：</strong>能在 ERP / Odoo 等系统内集成 AI Agent，完成订单解析、库存分析、可视化展示等自动化工作流设计与实现。</li>
+
+        <li><strong>智能体与自动化开发：</strong>熟练使用 LangGraph / Smith 构建行业分析 Agent、文案生成 Agent、监控 Agent；具备从 0 到 1 搭建 AIGC 网站的能力。</li>
+
+        <li><strong>多模态与联邦学习实践：</strong>构建过支持图像/视频/传感器的农业识别系统，基于 FedAvg 落地三级联邦学习框架，形成可在弱联网场景部署的平台原型。</li>
+
+        <li><strong>工程化与产品能力：</strong>具备前后端协同开发经验，负责从需求、架构、模型集成到上线的全链路交付流程；熟悉 DevOps、可视化体系和低成本推理优化。</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="education">
+      <div class="section-title">教育</div>
+      <div class="role">广东技术师范大学 · 人工智能（全日制本科）</div>
+      <div class="meta">2023.9 — 2027.6（在读）</div>
+    </section>
+
+    <section class="card" aria-labelledby="research">
+      <div class="section-title">研究 / 技术兴趣</div>
+      <p class="muted" style="margin:6px 0 0 0;">
+        RAG 架构、语义检索（BGE、FAISS + HNSW）、大模型与工程化（模型压缩、LoRA）、多模态理解与应用落地、隐私保护（联邦学习）和大规模在线系统稳定性优化。
+      </p>
+    </section>
+  </section>
+</main>
+
+<footer style="max-width:var(--maxw);margin:14px auto;color:var(--muted);font-size:13px;">
+  若需改成深色主题、英文版、招聘专用一页打印版，也可继续告诉我。
+</footer>
 </body>
 </html>
