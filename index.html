@@ -195,15 +195,15 @@
     </style>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+        @import url('https://fonts.loli.net/css2?family=Cinzel:wght@400;700&display=swap');
     </style>
 
     <script type="importmap">
       {
         "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
-          "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/+esm"
+          "three": "https://npm.elemecdn.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://npm.elemecdn.com/three@0.160.0/examples/jsm/",
+          "@mediapipe/tasks-vision": "https://npm.elemecdn.com/@mediapipe/tasks-vision@0.10.3/+esm"
         }
       }
     </script>
@@ -691,11 +691,11 @@
             webcamCanvas.height = 120
 
             const vision = await FilesetResolver.forVisionTasks(
-                'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm'
+                'https://npm.elemecdn.com/@mediapipe/tasks-vision@0.10.3/wasm'
             )
             handLandmarker = await HandLandmarker.createFromOptions(vision, {
                 baseOptions: {
-                    modelAssetPath: `https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task`,
+                    modelAssetPath: `./hand_landmarker.task`,
                     delegate: 'GPU',
                 },
                 runningMode: 'VIDEO',
