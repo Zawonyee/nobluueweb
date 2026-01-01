@@ -92,7 +92,12 @@
         /* Typography - Centerpiece */
         h1 {
             color: #fceea7;
-            font-size: 56px;
+            font-size: clamp(24px, 6vw, 56px);
+            /* Responsive font size */
+            width: 90%;
+            /* Prevent overflow on small screens */
+            text-align: center;
+            /* Center text */
             margin: 0;
             font-weight: 400;
             letter-spacing: 6px;
@@ -136,6 +141,8 @@
             width: 100%;
             height: 100%;
             display: block;
+            transform: scaleX(-1);
+            /* Mirror visual */
         }
 
         /* 帮助面板 - 左侧 */
@@ -231,7 +238,7 @@
             </p>
         </div>
 
-        <h1>Merry Christmas</h1>
+        <h1>香香今天也要开开心心！</h1>
 
         <div id="music-control"
             style="position: absolute; top: 40px; right: 40px; cursor: pointer; color: #d4af37; font-size: 24px; pointer-events: auto;">
@@ -305,6 +312,7 @@
             loadFixedImages() // Load the 10 fixed images
             setupPostProcessing()
             setupEvents()
+            setupMobileInteractions() // New mobile interaction setup
             await initMediaPipe()
 
             const loader = document.getElementById('loader')
@@ -312,6 +320,30 @@
             setTimeout(() => loader.remove(), 800)
 
             animate()
+        }
+
+        function setupMobileInteractions() {
+            // Click to hide Webcam
+            const webcamWrapper = document.getElementById('webcam-wrapper')
+            if (webcamWrapper) {
+                webcamWrapper.style.pointerEvents = 'auto' // Force clickable
+
+                const hideWebcam = () => {
+                    webcamWrapper.classList.add('ui-hidden')
+                }
+                webcamWrapper.addEventListener('click', hideWebcam)
+                webcamWrapper.addEventListener('touchstart', hideWebcam, { passive: true })
+            }
+
+            // Click to hide Help Panel
+            const helpPanel = document.getElementById('help-panel')
+            if (helpPanel) {
+                const hideHelp = () => {
+                    helpPanel.classList.add('ui-hidden')
+                }
+                helpPanel.addEventListener('click', hideHelp)
+                helpPanel.addEventListener('touchstart', hideHelp, { passive: true })
+            }
         }
 
         function initThree() {
@@ -753,7 +785,7 @@
             if (result.landmarks && result.landmarks.length > 0) {
                 STATE.hand.detected = true
                 const lm = result.landmarks[0]
-                STATE.hand.x = (lm[9].x - 0.5) * 2
+                STATE.hand.x = (lm[9].x - 0.5) * -2 // Mirrored logic
                 STATE.hand.y = (lm[9].y - 0.5) * 2
 
                 const thumb = lm[4]
