@@ -201,9 +201,9 @@
     <script type="importmap">
       {
         "imports": {
-          "three": "https://npm.elemecdn.com/three@0.160.0/build/three.module.js",
-          "three/addons/": "https://npm.elemecdn.com/three@0.160.0/examples/jsm/",
-          "@mediapipe/tasks-vision": "https://npm.elemecdn.com/@mediapipe/tasks-vision@0.10.3/+esm"
+          "three": "./js/three/build/three.module.js",
+          "three/addons/": "./js/three/examples/jsm/",
+          "@mediapipe/tasks-vision": "./js/mediapipe/vision_bundle.mjs"
         }
       }
     </script>
@@ -691,7 +691,7 @@
             webcamCanvas.height = 120
 
             const vision = await FilesetResolver.forVisionTasks(
-                'https://npm.elemecdn.com/@mediapipe/tasks-vision@0.10.3/wasm'
+                './js/mediapipe/wasm'
             )
             handLandmarker = await HandLandmarker.createFromOptions(vision, {
                 baseOptions: {
