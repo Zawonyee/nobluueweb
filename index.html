@@ -226,14 +226,22 @@
             <p><code>🤏</code> <b>捏夹</b>：照片聚焦</p>
             <hr />
             <p><code>H</code> 键：隐藏UI</p>
+            <p><code>M</code> 键：开关音乐</p>
             <p style="font-size: 11px; color: #999; margin-top: 12px">
             </p>
         </div>
 
         <h1>香香小姐今天也要开开心心！</h1>
 
-
+        <div id="music-control"
+            style="position: absolute; top: 40px; right: 40px; cursor: pointer; color: #d4af37; font-size: 24px;">
+            🎵
+        </div>
     </div>
+
+    <audio id="bgm" loop>
+        <source src="你开心我才ok.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- Webcam hidden structure -->
     <div id="webcam-wrapper">
@@ -806,6 +814,31 @@
                 composer.setSize(window.innerWidth, window.innerHeight)
             })
 
+            // Music Control
+            const bgm = document.getElementById('bgm')
+            const musicBtn = document.getElementById('music-control')
+            let isMusicPlaying = false
+
+            function toggleMusic() {
+                if (isMusicPlaying) {
+                    bgm.pause()
+                    musicBtn.style.opacity = 0.5
+                } else {
+                    bgm.play().catch(e => console.log('Audio autoplay prevented'))
+                    musicBtn.style.opacity = 1
+                }
+                isMusicPlaying = !isMusicPlaying
+            }
+
+            musicBtn.addEventListener('click', toggleMusic)
+
+            // Auto-play on first interaction
+            window.addEventListener('click', () => {
+                if (!isMusicPlaying) toggleMusic()
+            }, { once: true })
+
+
+
 
             // Toggle UI logic - Hide/Show all UI controls
             window.addEventListener('keydown', (e) => {
@@ -818,6 +851,8 @@
                     if (webcamWrapper) {
                         webcamWrapper.classList.toggle('ui-hidden')
                     }
+                } else if (e.key.toLowerCase() === 'm') {
+                    toggleMusic()
                 }
             })
         }
