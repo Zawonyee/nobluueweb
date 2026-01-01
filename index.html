@@ -849,31 +849,59 @@
             // Music Control
             const bgm = document.getElementById('bgm')
             const musicBtn = document.getElementById('music-control')
-            let isMusicPlaying = false
 
-            function toggleMusic() {
-                if (isMusicPlaying) {
-                    bgm.pause()
-                    musicBtn.style.opacity = 0.5
-                } else {
-                    bgm.play().catch(e => console.log('Audio autoplay prevented'))
+            // 1. Attempt Autoplay on load
+            bgm.volume = 0.5
+            const attemptPlay = () => {
+                bgm.play().then(() => {
+                    musicBtn.textContent = '🎵'
                     musicBtn.style.opacity = 1
-                }
-                isMusicPlaying = !isMusicPlaying
+                    // Remove fallback listeners if successful
+                    document.removeEventListener('click', fallbackPlay)
+                    document.removeEventListener('touchstart', fallbackPlay)
+                }).catch(e => {
+                    console.log("Autoplay blocked, waiting for interaction")
+                    musicBtn.textContent = '🔇'
+                })
             }
+            attemptPlay()
 
-            musicBtn.addEventListener('click', toggleMusic)
+            // 2. Fallback: Catch first interaction
+            const fallbackPlay = () => {
+                if (bgm.paused) {
+                    attemptPlay()
+                }
+            }
+            document.addEventListener('click', fallbackPlay)
+            document.addEventListener('touchstart', fallbackPlay)
 
-            // Auto-play on first interaction
-            window.addEventListener('click', () => {
-                if (!isMusicPlaying) toggleMusic()
-            }, { once: true })
-
-
-
+            // 3. Manual Toggle
+            musicBtn.addEventListener('click', (e) => {
+                e.stopPropagation() // Don't trigger fallback
+                if (bgm.paused) {
+                    bgm.play()
+                    musicBtn.textContent = '🎵'
+                    musicBtn.style.opacity = 1
+                } else {
+                    bgm.pause()
+                    musicBtn.textContent = '🔇'
+                    musicBtn.style.opacity = 0.5
+                }
+            })
 
             // Toggle UI logic - Hide/Show all UI controls
             window.addEventListener('keydown', (e) => {
+                if (e.key.toLowerCase() === 'm') {
+                    if (bgm.paused) {
+                        bgm.play()
+                        musicBtn.textContent = '🎵'
+                        musicBtn.style.opacity = 1
+                    } else {
+                        bgm.pause()
+                        musicBtn.textContent = '🔇'
+                        musicBtn.style.opacity = 0.5
+                    }
+                }
                 if (e.key.toLowerCase() === 'h') {
                     const uiLayer = document.getElementById('ui-layer')
                     const webcamWrapper = document.getElementById('webcam-wrapper')
