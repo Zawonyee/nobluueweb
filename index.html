@@ -275,6 +275,7 @@
             focusTarget: null,
             hand: { detected: false, x: 0, y: 0 },
             rotation: { x: 0, y: 0 },
+            currentPhotoIndex: -1, // Track sequential focus
         }
 
         let scene, camera, renderer, composer
@@ -292,7 +293,7 @@
             createTextures()
             createParticles()
             createDust()
-            createDefaultPhotos()
+            // createDefaultPhotos()  <-- Removed
             loadFixedImages() // Load the 10 fixed images
             setupPostProcessing()
             setupEvents()
@@ -623,26 +624,7 @@
             }
         }
 
-        function createDefaultPhotos() {
-            const canvas = document.createElement('canvas')
-            canvas.width = 512
-            canvas.height = 512
-            const ctx = canvas.getContext('2d')
-            ctx.fillStyle = '#050505'
-            ctx.fillRect(0, 0, 512, 512)
-            ctx.strokeStyle = '#eebb66'
-            ctx.lineWidth = 15
-            ctx.strokeRect(20, 20, 472, 472)
-            ctx.font = '500 60px Times New Roman'
-            ctx.fillStyle = '#eebb66'
-            ctx.textAlign = 'center'
-            ctx.fillText('By', 256, 230)
-            ctx.fillText('Youhun', 256, 300)
 
-            const tex = new THREE.CanvasTexture(canvas)
-            tex.colorSpace = THREE.SRGBColorSpace
-            addPhotoToScene(tex)
-        }
 
         function addPhotoToScene(texture) {
             const frameGeo = new THREE.BoxGeometry(1.4, 1.4, 0.05)
@@ -800,9 +782,11 @@
                     if (STATE.mode !== 'FOCUS') {
                         STATE.mode = 'FOCUS'
                         const photos = particleSystem.filter((p) => p.type === 'PHOTO')
-                        if (photos.length)
-                            STATE.focusTarget =
-                                photos[Math.floor(Math.random() * photos.length)].mesh
+                        if (photos.length) {
+                            // Sequential traversal
+                            STATE.currentPhotoIndex = (STATE.currentPhotoIndex + 1) % photos.length
+                            STATE.focusTarget = photos[STATE.currentPhotoIndex].mesh
+                        }
                     }
                 } else if (avgDist > 0.4) {
                     // 张开手势
