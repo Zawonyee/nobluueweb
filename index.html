@@ -1,166 +1,494 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>黄梓皓 — 简历</title>
-<style>
-  :root{
-    --accent:#0b74de;
-    --muted:#666;
-    --bg:#f7f9fc;
-    --card:#ffffff;
-    --maxw:900px;
-    font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft Yahei", sans-serif;
-  }
-  body{
-    background:var(--bg);
-    margin:20px;
-    color:#222;
-    -webkit-print-color-adjust:exact;
-  }
-  .container{
-    max-width:var(--maxw);
-    margin:0 auto;
-    display:flex;
-    gap:20px;
-    align-items:flex-start;
-  }
-  .left{
-    width:320px;
-    flex:0 0 320px;
-  }
-  .right{
-    flex:1;
-  }
-  .card{
-    background:var(--card);
-    padding:18px;
-    border-radius:10px;
-    box-shadow:0 6px 20px rgba(12,30,50,0.06);
-    margin-bottom:18px;
-  }
-  header.card{
-    display:flex;
-    gap:16px;
-    align-items:center;
-  }
-  .avatar{
-    width:84px;
-    height:84px;
-    border-radius:8px;
-    object-fit:cover; /* 自动裁剪填满区域 */
-}
-  h1{margin:0;font-size:22px;}
-  .sub{color:var(--muted);font-size:13px;margin-top:6px;}
-  .section-title{font-weight:700;color:var(--accent);margin-bottom:8px;font-size:15px;}
-  .info-row{font-size:14px;margin:6px 0;color:#222;}
-  .muted{color:var(--muted);font-size:13px;}
-  ul{padding-left:18px;margin:6px 0;}
-  .tag{display:inline-block;background:#eef6ff;color:var(--accent);padding:6px 8px;border-radius:6px;font-size:12px;margin:4px 6px 4px 0;}
-  .skill-list{display:flex;flex-wrap:wrap;gap:6px;}
-  @media (max-width:880px){
-    .container{flex-direction:column;padding:10px;}
-    .left{width:100%;flex:auto;}
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>黄梓皓 | AI 应用开发与多模态工程</title>
+  <meta name="description" content="黄梓皓的个人主页，聚焦 AI 应用开发、多模态工程、智能体系统、竞赛成果与代表项目。" />
+  <style>
+    :root {
+      --bg: #f5efe6;
+      --surface: rgba(255, 251, 245, 0.82);
+      --surface-strong: rgba(255, 251, 245, 0.96);
+      --ink: #1e1a18;
+      --ink-soft: #5f564f;
+      --line: rgba(105, 67, 42, 0.14);
+      --brand: #8f2f23;
+      --brand-deep: #5c1d18;
+      --shadow: 0 24px 70px rgba(73, 35, 23, 0.12);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --max-width: 1220px;
+      --serif: "Source Han Serif SC", "Noto Serif SC", "Songti SC", serif;
+      --sans: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(143, 47, 35, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(187, 138, 58, 0.14), transparent 22%),
+        linear-gradient(180deg, #f7f0e7 0%, #f3ebe1 48%, #efe5d8 100%);
+      min-height: 100vh;
+    }
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::before {
+      background:
+        linear-gradient(90deg, rgba(92, 29, 24, 0.05) 0, rgba(92, 29, 24, 0.05) 1px, transparent 1px, transparent 72px),
+        linear-gradient(rgba(92, 29, 24, 0.04) 0, rgba(92, 29, 24, 0.04) 1px, transparent 1px, transparent 72px);
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 80%);
+    }
+    body::after { background: radial-gradient(circle at center, transparent 62%, rgba(92, 29, 24, 0.08) 100%); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .shell { position: relative; z-index: 1; width: min(calc(100% - 32px), var(--max-width)); margin: 24px auto 56px; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; padding: 12px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.52); border-radius: 999px; background: rgba(255, 248, 239, 0.6);
+      backdrop-filter: blur(18px); box-shadow: 0 16px 38px rgba(74, 38, 26, 0.08);
+    }
+    .brandline { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brandmark {
+      width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; font-weight: 800; color: #fff;
+      background: linear-gradient(135deg, var(--brand), #bf5b30); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+    .brandtext strong { display: block; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; }
+    .brandtext span { display: block; color: var(--ink-soft); font-size: 12px; margin-top: 2px; }
+    .nav { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav a { padding: 8px 12px; border-radius: 999px; color: var(--ink-soft); font-size: 13px; transition: 0.28s ease; }
+    .nav a:hover { color: var(--brand); background: rgba(143, 47, 35, 0.08); }
+    .hero {
+      position: relative; overflow: hidden; padding: 36px; border-radius: var(--radius-xl);
+      background: linear-gradient(130deg, rgba(92, 29, 24, 0.98) 0%, rgba(137, 52, 33, 0.92) 45%, rgba(191, 91, 48, 0.86) 100%);
+      box-shadow: var(--shadow);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 18% 15%, rgba(255, 219, 149, 0.24), transparent 22%),
+        radial-gradient(circle at 88% 22%, rgba(255, 255, 255, 0.12), transparent 20%),
+        linear-gradient(125deg, transparent 0 32%, rgba(255, 255, 255, 0.08) 32% 34%, transparent 34% 100%);
+      pointer-events: none;
+    }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.35fr 0.95fr; gap: 28px; align-items: stretch; }
+    .hero-copy { display: flex; flex-direction: column; gap: 18px; color: #fff8f3; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 8px 14px; border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16); background: rgba(255, 247, 237, 0.08); color: rgba(255, 248, 243, 0.84);
+      font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .hero h1 {
+      margin: 0; font-family: var(--serif); font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1;
+      letter-spacing: 0.04em; text-shadow: 0 8px 20px rgba(32, 7, 4, 0.2);
+    }
+    .hero h1 span { display: block; margin-top: 10px; font-size: clamp(1.1rem, 2.2vw, 1.65rem); color: rgba(255, 241, 230, 0.88); }
+    .hero-lead { margin: 0; max-width: 700px; color: rgba(255, 245, 237, 0.9); font-size: 1rem; line-height: 1.9; }
+    .hero-tags, .stat-grid, .mini-grid, .award-grid, .project-grid, .paper-grid, .timeline, .gallery-grid, .contact-grid, .footer-tags { display: grid; gap: 14px; }
+    .hero-tags { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .glass-chip {
+      padding: 12px 14px; border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(255, 249, 243, 0.1);
+      backdrop-filter: blur(10px); font-size: 13px; line-height: 1.6; color: rgba(255, 247, 240, 0.88);
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border-radius: 999px;
+      border: 1px solid transparent; font-size: 14px; font-weight: 700; transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+    }
+    .btn-primary { color: #39140e; background: linear-gradient(135deg, #f4d6a2, #f1bc69); box-shadow: 0 18px 36px rgba(27, 10, 4, 0.2); }
+    .btn-secondary { color: #fff6ef; border-color: rgba(255, 255, 255, 0.22); background: rgba(255, 248, 239, 0.08); }
+    .btn:hover { transform: translateY(-2px); }
+    .hero-aside {
+      position: relative; min-height: 100%; padding: 18px; border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255, 248, 240, 0.14), rgba(255, 248, 240, 0.04));
+      border: 1px solid rgba(255, 255, 255, 0.14); backdrop-filter: blur(12px); display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
+    }
+    .portrait { display: grid; grid-template-columns: 104px 1fr; gap: 16px; align-items: center; }
+    .portrait img {
+      width: 104px; height: 128px; object-fit: cover; border-radius: 24px; border: 2px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 20px 40px rgba(28, 7, 4, 0.18);
+    }
+    .portrait h2 { margin: 0; font-family: var(--serif); font-size: 1.6rem; color: #fff8f4; }
+    .portrait p { margin: 8px 0 0; color: rgba(255, 244, 235, 0.76); line-height: 1.75; font-size: 14px; }
+    .contact-list { display: grid; gap: 10px; }
+    .contact-list a, .contact-list div {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; border-radius: 16px;
+      background: rgba(255, 252, 248, 0.08); color: rgba(255, 244, 237, 0.88); font-size: 14px;
+    }
+    .contact-list span:last-child { color: rgba(255, 244, 237, 0.66); font-size: 13px; }
+    .main-grid { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 22px; margin-top: 22px; }
+    .column { display: grid; gap: 22px; align-content: start; }
+    .panel {
+      position: relative; overflow: hidden; padding: 28px; border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, 0.54);
+      background: linear-gradient(180deg, var(--surface-strong), var(--surface)); backdrop-filter: blur(14px); box-shadow: var(--shadow);
+    }
+    .panel::before {
+      content: ""; position: absolute; inset: auto -10% 0 auto; width: 160px; height: 160px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(187, 138, 58, 0.12), transparent 70%); pointer-events: none;
+    }
+    .panel h3 { margin: 0 0 14px; font-family: var(--serif); font-size: 1.5rem; color: var(--brand-deep); letter-spacing: 0.04em; }
+    .section-copy { margin: 0 0 18px; color: var(--ink-soft); line-height: 1.9; font-size: 15px; }
+    .stat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .stat-card { padding: 18px 16px; border-radius: 20px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.5); min-height: 120px; }
+    .stat-card strong { display: block; font-family: var(--serif); font-size: 2rem; color: var(--brand); margin-bottom: 10px; }
+    .stat-card span { display: block; color: var(--ink-soft); line-height: 1.7; font-size: 14px; }
+    .mini-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
+    .mini-card { padding: 18px; border-radius: 22px; background: rgba(255, 255, 255, 0.58); border: 1px solid var(--line); }
+    .mini-card strong { display: block; margin-bottom: 8px; font-size: 16px; color: var(--brand-deep); }
+    .mini-card p { margin: 0; color: var(--ink-soft); line-height: 1.8; font-size: 14px; }
+    .timeline { margin-top: 18px; }
+    .timeline-item {
+      position: relative; padding: 20px 20px 20px 28px; border-left: 2px solid rgba(143, 47, 35, 0.18);
+      margin-left: 8px; background: rgba(255, 255, 255, 0.46); border-radius: 0 22px 22px 0;
+    }
+    .timeline-item::before {
+      content: ""; position: absolute; top: 26px; left: -10px; width: 16px; height: 16px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), #d2753a); box-shadow: 0 0 0 6px rgba(143, 47, 35, 0.1);
+    }
+    .timeline-item + .timeline-item { margin-top: 14px; }
+    .timeline-head { display: flex; justify-content: space-between; gap: 14px; align-items: baseline; flex-wrap: wrap; margin-bottom: 10px; }
+    .timeline-head strong { font-size: 18px; color: var(--brand-deep); }
+    .timeline-head span { color: var(--ink-soft); font-size: 13px; }
+    .timeline-item p { margin: 0; color: var(--ink-soft); line-height: 1.9; font-size: 14px; }
+    .award-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .award-card {
+      position: relative; overflow: hidden; min-height: 100%; padding: 20px; border-radius: 24px; border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 252, 246, 0.84));
+    }
+    .award-card.featured {
+      grid-column: span 2; display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 22px; align-items: center;
+      background: linear-gradient(120deg, rgba(92, 29, 24, 0.98), rgba(132, 47, 29, 0.92) 52%, rgba(191, 102, 52, 0.82)), linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent);
+      color: #fff7f0;
+    }
+    .award-card.featured h4, .award-card.featured p, .award-card.featured li { color: inherit; }
+    .award-cover {
+      overflow: hidden; border-radius: 22px; border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06); box-shadow: 0 24px 40px rgba(26, 8, 4, 0.18);
+    }
+    .award-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .award-card h4 { margin: 0 0 8px; font-family: var(--serif); font-size: 1.3rem; color: var(--brand-deep); }
+    .award-card p, .award-card ul { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.85; }
+    .award-card ul { padding-left: 18px; margin-top: 10px; }
+    .award-label {
+      display: inline-flex; width: fit-content; margin-bottom: 12px; padding: 7px 12px; border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12); color: inherit; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag {
+      display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px;
+      background: rgba(143, 47, 35, 0.08); color: var(--brand); font-size: 12px; font-weight: 700; letter-spacing: 0.04em;
+    }
+    .award-card.featured .tag { background: rgba(255, 248, 240, 0.14); color: #fff7ef; }
+    .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .project-card { padding: 20px; border-radius: 24px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.56); }
+    .project-card strong { display: block; margin-bottom: 8px; font-size: 18px; color: var(--brand-deep); }
+    .project-card p { margin: 0; color: var(--ink-soft); line-height: 1.85; font-size: 14px; }
+    .gallery-grid { grid-template-columns: 1.06fr 0.94fr; align-items: stretch; }
+    .gallery-visual {
+      overflow: hidden; border-radius: 28px; border: 1px solid rgba(105, 67, 42, 0.16);
+      background: #2c160d; box-shadow: 0 24px 52px rgba(52, 21, 10, 0.16);
+    }
+    .gallery-visual img { width: 100%; height: 100%; object-fit: cover; min-height: 360px; }
+    .gallery-copy { display: grid; gap: 14px; align-content: start; }
+    .gallery-copy h4 { margin: 0; font-family: var(--serif); font-size: 1.35rem; color: var(--brand-deep); }
+    .gallery-copy p { margin: 0; color: var(--ink-soft); line-height: 1.95; font-size: 14px; }
+    .paper-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
+    .paper-card { padding: 18px; border-radius: 22px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.54); }
+    .paper-cover {
+      margin: -4px -4px 14px;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 16px 36px rgba(60, 27, 15, 0.1);
+    }
+    .paper-cover img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .paper-card strong { display: block; margin-bottom: 10px; color: var(--brand-deep); font-size: 16px; }
+    .paper-card p { margin: 0; color: var(--ink-soft); line-height: 1.8; font-size: 14px; }
+    .skill-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .skill-cloud span {
+      padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(143, 47, 35, 0.12);
+      background: rgba(255, 255, 255, 0.72); color: var(--brand-deep); font-size: 13px; font-weight: 700;
+    }
+    .contact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; }
+    .contact-card { padding: 18px; border-radius: 22px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.56); }
+    .contact-card strong { display: block; margin-bottom: 8px; font-size: 15px; color: var(--brand-deep); }
+    .contact-card p, .contact-card a { margin: 0; color: var(--ink-soft); line-height: 1.8; font-size: 14px; word-break: break-all; }
+    footer {
+      margin-top: 22px; padding: 22px 28px; border-radius: 24px; background: rgba(92, 29, 24, 0.92);
+      color: rgba(255, 246, 238, 0.92); box-shadow: var(--shadow);
+    }
+    footer p { margin: 0; line-height: 1.9; font-size: 14px; }
+    .fade-up { animation: fadeUp 0.75s ease both; }
+    .delay-1 { animation-delay: 0.08s; }
+    .delay-2 { animation-delay: 0.16s; }
+    .delay-3 { animation-delay: 0.24s; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 1120px) {
+      .hero-grid, .main-grid, .award-card.featured, .gallery-grid { grid-template-columns: 1fr; }
+      .hero-tags, .stat-grid, .paper-grid, .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 820px) {
+      .shell { width: min(calc(100% - 20px), var(--max-width)); margin-top: 12px; }
+      .topbar, .hero, .panel, footer { border-radius: 24px; }
+      .topbar { padding: 16px; border-radius: 24px; }
+      .nav { justify-content: flex-start; }
+      .hero { padding: 24px; }
+      .panel { padding: 22px; }
+      .hero-tags, .mini-grid, .award-grid, .project-grid, .paper-grid, .stat-grid, .contact-grid { grid-template-columns: 1fr; }
+      .portrait { grid-template-columns: 1fr; }
+      .portrait img { width: 92px; height: 116px; }
+    }
+  </style>
 </head>
 <body>
-<main class="container" role="main">
-  <aside class="left">
-    <section class="card" aria-labelledby="personal">
-      <header style="display:flex;gap:12px;align-items:center;">
-        <img class="avatar" src="myphoto.jpg" alt="avatar">
-        <div>
-          <h1>黄梓皓</h1>
-          <div class="sub">AI 应用开发 · 数据驱动 · 多模态工程</div>
+  <div class="shell">
+    <header class="topbar fade-up">
+      <div class="brandline">
+        <div class="brandmark">HZ</div>
+        <div class="brandtext">
+          <strong>HUANG ZIHAO</strong>
+          <span>AI 应用开发 / 多模态工程 / 智能体系统</span>
         </div>
-      </header>
+      </div>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#about">概览</a>
+        <a href="#awards">竞赛</a>
+        <a href="#projects">项目</a>
+        <a href="#works">作品</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
 
-      <div style="margin-top:12px;">
-        <div class="section-title">个人信息</div>
-        <div class="info-row">出生：2004年7月</div>
-        <div class="info-row">籍贯：广东江门市</div>
-        <div class="info-row">院校：广东技术师范大学（广州）</div>
-        <div class="info-row">邮箱：zawonyee@163.com</div>
-        <div class="info-row">手机：13923082530</div>
+    <section class="hero fade-up delay-1" id="top">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Portfolio / Resume / Selected Work</div>
+          <h1>
+            黄梓皓
+            <span>把模型能力落成可交付系统，而不只是停留在 Demo。</span>
+          </h1>
+          <p class="hero-lead">
+            广东技术师范大学人工智能专业本科在读，持续围绕多模态识别、智能体工作流、AIGC 产品化与联邦学习做工程实践。
+            近两段实习分别聚焦企业级 AI 应用开发与营销场景 AIGC 落地，兼具竞赛强度、系统化实现与产品化视角。
+          </p>
+          <div class="hero-tags">
+            <div class="glass-chip">OCR + VLM 发票抽取<br />95%+ 识别准确率</div>
+            <div class="glass-chip">LangGraph 多智能体<br />订单处理自动化</div>
+            <div class="glass-chip">多模态农业平台<br />Android + Web 双端</div>
+            <div class="glass-chip">AIGC 营销创作<br />文生海报与二次编辑</div>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#awards">查看重点成果</a>
+            <a class="btn btn-secondary" href="#contact">联系我</a>
+          </div>
+        </div>
+
+        <aside class="hero-aside">
+          <div class="portrait">
+            <img src="myphoto.jpg" alt="黄梓皓头像" />
+            <div>
+              <h2>AI 应用开发者</h2>
+              <p>
+                关注多模态理解、RAG、Agent 编排、低成本推理优化与真实业务场景落地。
+                希望做既能跑通链路，也能承受实际使用压力的系统。
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-list">
+            <div><span>院校</span><span>广东技术师范大学 · 人工智能</span></div>
+            <div><span>所在地</span><span>广东江门 / 广州</span></div>
+            <a href="mailto:zawonyee@163.com"><span>邮箱</span><span>zawonyee@163.com</span></a>
+            <a href="tel:13923082530"><span>手机</span><span>13923082530</span></a>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="card" aria-labelledby="skills">
-      <div class="section-title">技能与能力</div>
-      <div class="skill-list">
-        <span class="tag">Python</span>
-        <span class="tag">SQL</span>
-        <span class="tag">OCR / VLM</span>
-        <span class="tag">LangGraph / LangChain</span>
-        <span class="tag">ECharts / 前端</span>
-        <span class="tag">模型微调 (LoRA)</span>
-        <span class="tag">联邦学习</span>
-        <span class="tag">FAISS / HNSW</span>
+    <main class="main-grid">
+      <div class="column">
+        <section class="panel fade-up delay-1" id="about">
+          <h3>个人概览</h3>
+          <p class="section-copy">
+            我的优势不只是会调用模型，而是能从需求理解、任务拆解、推理链路设计、数据结构化、前后端串联到部署上线，完整闭环交付一个可持续迭代的 AI 应用。
+          </p>
+          <div class="stat-grid">
+            <div class="stat-card"><strong>2</strong><span>段 AI 相关实习，覆盖企业级智能化与营销 AIGC 产品场景。</span></div>
+            <div class="stat-card"><strong>4+</strong><span>国家级 / 省级竞赛核心成果，含 CCPC 银奖与蓝桥杯国赛二等奖。</span></div>
+            <div class="stat-card"><strong>3</strong><span>软著登记，延伸到实验室平台、多模态农业与数字体系统。</span></div>
+            <div class="stat-card"><strong>50+</strong><span>农田同步识别任务级平台方案，面向弱联网部署场景设计。</span></div>
+          </div>
+          <div class="mini-grid">
+            <article class="mini-card"><strong>教育背景</strong><p>2023.09 - 2027.06，广东技术师范大学，人工智能专业，全日制本科在读。</p></article>
+            <article class="mini-card"><strong>职业定位</strong><p>偏好多模态应用、智能体系统、RAG 架构、AI 产品工程化与高质量前后端整合实现。</p></article>
+            <article class="mini-card"><strong>能力侧重点</strong><p>Prompt 设计、工作流编排、OCR/VLM 融合、可视化看板、Agent 产品化和快速验证能力。</p></article>
+            <article class="mini-card"><strong>英语与表达</strong><p>CET-6，通过技术文档、竞赛答辩与项目资料撰写建立起较强的信息组织能力。</p></article>
+          </div>
+        </section>
+
+        <section class="panel fade-up delay-2">
+          <h3>实习与实践</h3>
+          <p class="section-copy">两段经历分别锻炼了我在企业业务链路与创意型 AIGC 产品中的落地方式，一个偏系统自动化，一个偏生成式产品验证。</p>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-head"><strong>蓝色光标（数字）传媒集团 · AI 实习生</strong><span>2025.09 - 2025.12</span></div>
+              <p>参与汽车行业竞品分析 Agent 搭建，使用 LangGraph、LangSmith 与 MCP 数据接入方案完善信息抓取、内容分析和结果生成链路；同时参与 Eazywa 海报设计平台 AIGC 功能开发，围绕文生海报、可编辑生成内容、Prompt 优化与 CI/CD 流程打磨产品 MVP。</p>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-head"><strong>广州前沿信息系统有限公司 · AI 应用开发实习生</strong><span>2025.06 - 2025.09</span></div>
+              <p>实现基于 PaddleOCR + Qwen-VL 的发票结构化提取流水线，识别准确率 95%+；在 Odoo 18.3 中开发 LangGraph 多智能体对话机器人，打通订单上传、用料查询、库存分析与 ECharts 可视化展示，推动业务处理效率提升约 60%。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel fade-up delay-2" id="projects">
+          <h3>代表项目</h3>
+          <p class="section-copy">我的项目偏向“把多个技术点串成完整方案”，强调输入、理解、决策、反馈和部署方式的连通性。</p>
+          <div class="project-grid">
+            <article class="project-card">
+              <strong>苍穹智鉴 · 农业智能决策与监管平台</strong>
+              <p>以项目负责人身份主导设计多模态识别 + 联邦学习 + 知识图谱 + GIS 可视化的一体化平台，面向病虫害识别、区域协同与隐私安全问题，构建支持 Android 与 Web 双端部署的中台雏形。</p>
+              <div class="tag-row"><span class="tag">CNN + LSTM</span><span class="tag">FedAvg</span><span class="tag">RBAC</span><span class="tag">GIS</span></div>
+            </article>
+            <article class="project-card">
+              <strong>发票信息提取模块</strong>
+              <p>面向企业票据处理场景，设计 OCR + VLM 端到端流水线，完成字段映射、分类清洗、JSON 结构化输出与批量推理优化，将单张处理时长控制在 3 秒内。</p>
+              <div class="tag-row"><span class="tag">PaddleOCR</span><span class="tag">Qwen-VL</span><span class="tag">JSON Pipeline</span></div>
+            </article>
+            <article class="project-card">
+              <strong>Odoo 智能 Agent 对话机器人</strong>
+              <p>在 ERP 场景中落地多智能体工作流，支撑订单处理全流程自动化；技术栈涵盖 Python、LangGraph、LangChain、PostgreSQL、Redis 与 ECharts。</p>
+              <div class="tag-row"><span class="tag">Odoo 18.3</span><span class="tag">LangGraph</span><span class="tag">ECharts</span></div>
+            </article>
+            <article class="project-card">
+              <strong>Eazywa AIGC 海报设计能力</strong>
+              <p>围绕营销场景的生成式创作体验，参与 Nano Banana Pro 图像生成与海报编辑能力集成，面向“文生海报”和“生成后二次编辑”做产品化验证和提示词链路优化。</p>
+              <div class="tag-row"><span class="tag">AIGC</span><span class="tag">MVP</span><span class="tag">Prompt Design</span></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel fade-up delay-3" id="works">
+          <h3>作品精选</h3>
+          <p class="section-copy">除了工程项目，我也持续做生成式视觉创作与提示词结构化设计，把审美目标转成清晰、可复现的生成控制。</p>
+          <div class="gallery-grid">
+            <div class="gallery-visual"><img src="images/tang-dance-work.jpg" alt="AI 生图作品《盛唐霓裳：玄宗与贵妃的宫廷共舞》" /></div>
+            <div class="gallery-copy">
+              <h4>《盛唐霓裳：玄宗与贵妃的宫廷共舞》</h4>
+              <p>作品围绕盛唐宫廷艺术场景展开，重点不是“帝观妃舞”的静态姿态，而是双人共舞的动态互动。通过人物姿态、衣料流动、环境群像和宫廷纵深的综合控制，强化情绪连接与历史质感。</p>
+              <p>创作说明强调了全景深构图、帝国红与鎏金配色、梨园乐舞语境、丝绸材质还原与动态袖摆张力，目标是规避常见 AI 绘图中背景模糊、肢体失衡和叙事弱的问题，做出更接近电影化定格的画面。</p>
+              <div class="tag-row"><span class="tag">AIGC 视觉创作</span><span class="tag">提示词结构化</span><span class="tag">历史题材</span><span class="tag">写实风格控制</span></div>
+            </div>
+          </div>
+        </section>
       </div>
-      <div style="margin-top:10px;" class="muted">
-        熟悉网页、小程序、脚本自动化、爬虫；熟练使用Axure、Figma；了解 C / Java 基础；具备数据分析和产品化模型能力。
+
+      <div class="column">
+        <section class="panel fade-up delay-1" id="awards">
+          <h3>重点竞赛成果</h3>
+          <p class="section-copy">竞赛经历主要分成两类：算法与程序设计强度验证，以及 AI 应用与项目落地能力验证。</p>
+          <div class="award-grid">
+            <article class="award-card featured">
+              <div class="award-cover"><img src="images/ccpc-silver.jpg" alt="第二十二届广东省大学生程序设计竞赛银奖证书" /></div>
+              <div>
+                <div class="award-label">Featured Honor</div>
+                <h4>CCPC 广东省大学生程序设计竞赛银奖</h4>
+                <p>第二十二届广东省大学生程序设计竞赛银奖，2025 年 6 月获奖。这是当前页面最核心的一项程序设计竞赛成果，直接体现算法训练、团队协作与现场解题能力。</p>
+                <ul>
+                  <li>赛事名称：The 22nd Guangdong Collegiate Programming Contest</li>
+                  <li>获奖等级：银奖</li>
+                  <li>学校：广东技术师范大学</li>
+                  <li>获奖日期：2025 年 6 月 2 日</li>
+                </ul>
+                <div class="tag-row"><span class="tag">Algorithm</span><span class="tag">Programming Contest</span><span class="tag">Teamwork</span></div>
+              </div>
+            </article>
+            <article class="award-card">
+              <div class="award-cover" style="margin-bottom: 16px;"><img src="images/lanqiao-agent-second.jpg" alt="蓝桥杯智能体开发大学组二等奖证书" /></div>
+              <h4>蓝桥杯全国总决赛二等奖</h4>
+              <p>第十六届蓝桥杯全国软件和信息技术专业人才大赛全国总决赛，项目实战赛“智能体开发大学组”二等奖，体现从大模型能力到具体应用设计的综合能力。</p>
+              <div class="tag-row"><span class="tag">Agent</span><span class="tag">National Final</span></div>
+            </article>
+
+            <article class="award-card">
+              <div class="award-cover" style="margin-bottom: 16px;"><img src="images/shuwei-cup-first.jpg" alt="数维杯国际数学建模一等奖证书" /></div>
+              <h4>数维杯国际数学建模一等奖</h4>
+              <p>2025 数维杯国际大学生数学建模竞赛一等奖。材料显示团队来自广东技术师范大学，对建模分析、协作交付和竞赛节奏控制能力形成了补充验证。</p>
+              <div class="tag-row"><span class="tag">Mathematical Modeling</span><span class="tag">International Contest</span></div>
+            </article>
+
+            <article class="award-card">
+              <div class="award-cover" style="margin-bottom: 16px;"><img src="images/ai-image-award.jpg" alt="AI生成世界 AI 图像图形技术创新大赛一等奖证书" /></div>
+              <h4>AI 生成世界图像创新大赛一等奖</h4>
+              <p>“2025年 AI 生成世界”AI 图像图形技术创新大赛 AI 生图赛道一等奖，与页面中的《盛唐霓裳》作品形成直接对应。</p>
+              <div class="tag-row"><span class="tag">AI Image</span><span class="tag">一等奖</span><span class="tag">Visual Creation</span></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel fade-up delay-2">
+          <h3>软件著作权</h3>
+          <p class="section-copy">除竞赛与项目外，我也参与将系统沉淀为正式登记的软件成果，说明工作并非停留在概念验证层面。</p>
+          <div class="paper-grid">
+            <article class="paper-card">
+              <div class="paper-cover"><img src="images/minisci-moe-copyright.jpg" alt="MiniSciMoe数字体系统软著证书" /></div>
+              <strong>MiniSciMoe 数字体系统 V1.0</strong>
+              <p>软著登记号：2026SR0469450。登记日期为 2026 年 3 月 20 日，体现数字化系统设计与落地参与。</p>
+            </article>
+            <article class="paper-card">
+              <div class="paper-cover"><img src="images/chayu-copyright.jpg" alt="茶语智韵创新实验室管理平台软著证书" /></div>
+              <strong>茶语智韵创新实验室管理平台 1.0</strong>
+              <p>软著登记号：2026SR0491991。以实验室管理与平台化协作为方向，体现项目规范化沉淀能力。</p>
+            </article>
+            <article class="paper-card">
+              <div class="paper-cover"><img src="images/cangqiong-copyright.jpg" alt="苍穹智鉴农业智能决策与监管平台软著证书" /></div>
+              <strong>苍穹智鉴农业智能决策与监管平台</strong>
+              <p>与核心代表项目同名，聚焦多模态识别与联邦学习结合的农业监管平台，延伸出完整的软件成果形态。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel fade-up delay-2">
+          <h3>技术栈与方法</h3>
+          <p class="section-copy">习惯从业务目标反推技术方案，尽量用合适而不过度的工程手段快速形成可验证版本，再持续迭代。</p>
+          <div class="skill-cloud">
+            <span>Python</span><span>SQL</span><span>LangGraph</span><span>LangChain</span><span>Dify</span><span>Coze</span><span>OCR / VLM</span><span>Prompt Engineering</span><span>RAG</span><span>BGE</span><span>FAISS + HNSW</span><span>LoRA</span><span>Redis</span><span>PostgreSQL</span><span>ECharts</span><span>Figma / Axure</span><span>Jenkins</span><span>Web / 小程序</span>
+          </div>
+        </section>
+
+        <section class="panel fade-up delay-3" id="contact">
+          <h3>联系与协作</h3>
+          <p class="section-copy">如果你希望聊 AI 应用落地、多模态工程、智能体工作流、项目合作或比赛交流，可以直接联系我。</p>
+          <div class="contact-grid">
+            <div class="contact-card"><strong>邮箱</strong><a href="mailto:zawonyee@163.com">zawonyee@163.com</a></div>
+            <div class="contact-card"><strong>电话</strong><a href="tel:13923082530">13923082530</a></div>
+            <div class="contact-card"><strong>城市 / 学校</strong><p>广东江门 / 广州 · 广东技术师范大学</p></div>
+          </div>
+        </section>
       </div>
-    </section>
+    </main>
 
-    <section class="card" aria-labelledby="cert">
-      <div class="section-title">证书 & 荣誉</div>
-      <ul>
-        <li>英语：CET-6（六级）</li>
-        <li>蓝桥杯全国总决赛二等奖（智能体设计与开发）</li>
-        <li>第十六届蓝桥杯广东赛区C/C++程序设计一等奖</li>
-        <li>2025CCPC广东省大学生程序设计竞赛银奖</li>
-        <li>2025数维杯国际数学建模一等奖</li>
-        <li>2025“开发者”算法挑战赛 Python 赛道一等奖</li>
-      </ul>
-    </section>
-
-    <section class="card" aria-labelledby="pub">
-      <div class="section-title">其它</div>
-      <div class="muted">著作：数字教材《数据采集与预处理技术》（第一作者）</div>
-    </section>
-  </aside>
-
-  <section class="right">
-    <section class="card" aria-labelledby="summary">
-      <div class="section-title">职业摘要</div>
-      <p style="margin:6px 0 0 0;">
-        拥有多模态与大模型工程实战经验（OCR、VLM、文本生成、RAG 与联邦学习场景）。擅长将模型能力产品化，负责端到端系统设计与落地（移动端 + Web + 后端流水线），关注推理成本与系统稳定性。
-      </p>
-    </section>
-
-    <section class="card" aria-labelledby="ability">
-      <div class="section-title">个人能力（基于实习经历提炼）</div>
-
-      <ul>
-        <li><strong>发票智能提取能力：</strong>可独立搭建 OCR + VLM 信息抽取流水线，图像自动结构化率达 95%+，支持多格式发票处理，具备字段映射和批量推理优化能力。</li>
-
-        <li><strong>企业系统智能化经验：</strong>能在 ERP / Odoo 等系统内集成 AI Agent，完成订单解析、库存分析、可视化展示等自动化工作流设计与实现。</li>
-
-        <li><strong>智能体与自动化开发：</strong>熟练使用 LangGraph / Smith 构建行业分析 Agent、文案生成 Agent、监控 Agent；具备从 0 到 1 搭建 AIGC 网站的能力。</li>
-
-        <li><strong>多模态与联邦学习实践：</strong>构建过支持图像/视频/传感器的农业识别系统，基于 FedAvg 落地三级联邦学习框架，形成可在弱联网场景部署的平台原型。</li>
-
-        <li><strong>工程化与产品能力：</strong>具备前后端协同开发经验，负责从需求、架构、模型集成到上线的全链路交付流程；熟悉 DevOps、可视化体系和低成本推理优化。</li>
-      </ul>
-    </section>
-
-    <section class="card" aria-labelledby="education">
-      <div class="section-title">教育</div>
-      <div class="role">广东技术师范大学 · 人工智能（全日制本科）</div>
-      <div class="meta">2023.9 — 2027.6（在读）</div>
-    </section>
-
-    <section class="card" aria-labelledby="research">
-      <div class="section-title">研究 / 技术兴趣</div>
-      <p class="muted" style="margin:6px 0 0 0;">
-        RAG 架构、语义检索（BGE、FAISS + HNSW）、大模型与工程化（模型压缩、LoRA）、多模态理解与应用落地、隐私保护（联邦学习）和大规模在线系统稳定性优化。
-      </p>
-    </section>
-  </section>
-</main>
-
-</footer>
+    <footer class="fade-up delay-3">
+      <p>黄梓皓 · AI 应用开发 / 多模态工程 / 智能体系统</p>
+    </footer>
+  </div>
 </body>
 </html>
+
