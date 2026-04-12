@@ -158,6 +158,8 @@
     .timeline-head strong { font-size: 18px; color: var(--brand-deep); }
     .timeline-head span { color: var(--ink-soft); font-size: 13px; }
     .timeline-item p { margin: 0; color: var(--ink-soft); line-height: 1.9; font-size: 14px; }
+    .timeline-item ul { margin: 12px 0 0; padding-left: 18px; color: var(--ink-soft); }
+    .timeline-item li { margin: 8px 0; line-height: 1.9; font-size: 14px; }
     .award-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .award-card {
       position: relative; overflow: hidden; min-height: 100%; padding: 20px; border-radius: 24px; border: 1px solid var(--line);
@@ -272,7 +274,6 @@
         <a href="#awards">竞赛</a>
         <a href="#projects">项目</a>
         <a href="#works">作品</a>
-        <a href="#contact">联系</a>
       </nav>
     </header>
 
@@ -285,14 +286,14 @@
             <span>把模型能力落成可交付系统，而不只是停留在 Demo。</span>
           </h1>
           <p class="hero-lead">
-            广东技术师范大学人工智能专业本科在读，持续围绕多模态识别、智能体工作流、AIGC 产品化与联邦学习做工程实践。
-            近两段实习分别聚焦企业级 AI 应用开发与营销场景 AIGC 落地，兼具竞赛强度、系统化实现与产品化视角。
+            广东技术师范大学人工智能专业本科在读，正在把程序设计竞赛能力、AI 应用工程能力和生成式内容落地能力收束成一条清晰路径。
+            这不是一份只堆关键词的主页，而是把实习里真正做过的系统、比赛里真正拿到的结果，以及作品背后的方法，放到同一张页面里讲清楚。
           </p>
           <div class="hero-tags">
-            <div class="glass-chip">OCR + VLM 发票抽取<br />95%+ 识别准确率</div>
-            <div class="glass-chip">LangGraph 多智能体<br />订单处理自动化</div>
-            <div class="glass-chip">多模态农业平台<br />Android + Web 双端</div>
-            <div class="glass-chip">AIGC 营销创作<br />文生海报与二次编辑</div>
+            <div class="glass-chip">发票信息提取模块<br />95%+ 准确率 / 3 秒内处理</div>
+            <div class="glass-chip">Odoo 智能 Agent<br />订单处理效率提升 60%</div>
+            <div class="glass-chip">竞品分析与海报生成<br />LangGraph / Dify / Jenkins</div>
+            <div class="glass-chip">CCPC 银奖 + 国赛二等奖<br />算法与应用双线验证</div>
           </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="#awards">查看重点成果</a>
@@ -327,33 +328,45 @@
         <section class="panel fade-up delay-1" id="about">
           <h3>个人概览</h3>
           <p class="section-copy">
-            我的优势不只是会调用模型，而是能从需求理解、任务拆解、推理链路设计、数据结构化、前后端串联到部署上线，完整闭环交付一个可持续迭代的 AI 应用。
+            我的重点不是“懂很多概念”，而是把模型、流程、系统和结果真正串起来。
+            在学校里，我用竞赛证明算法与实现能力；在实习里，我把 OCR、VLM、Agent、AIGC 工作流真正做进业务链路；
+            在项目里，我更关心方案能否落地、是否可维护、能不能被继续用。
           </p>
           <div class="stat-grid">
-            <div class="stat-card"><strong>2</strong><span>段 AI 相关实习，覆盖企业级智能化与营销 AIGC 产品场景。</span></div>
-            <div class="stat-card"><strong>4+</strong><span>国家级 / 省级竞赛核心成果，含 CCPC 银奖与蓝桥杯国赛二等奖。</span></div>
-            <div class="stat-card"><strong>3</strong><span>软著登记，延伸到实验室平台、多模态农业与数字体系统。</span></div>
-            <div class="stat-card"><strong>50+</strong><span>农田同步识别任务级平台方案，面向弱联网部署场景设计。</span></div>
+            <div class="stat-card"><strong>2</strong><span>段 AI 实习，分别覆盖企业级智能化和营销场景 AIGC 产品。</span></div>
+            <div class="stat-card"><strong>95%+</strong><span>发票识别准确率，完成从图像到结构化 JSON 的流水线闭环。</span></div>
+            <div class="stat-card"><strong>3s</strong><span>发票单张处理控制在 3 秒内，可批量处理并做字段映射适配。</span></div>
+            <div class="stat-card"><strong>60%</strong><span>Odoo 智能 Agent 落地后，订单相关处理效率提升约 60%。</span></div>
           </div>
           <div class="mini-grid">
             <article class="mini-card"><strong>教育背景</strong><p>2023.09 - 2027.06，广东技术师范大学，人工智能专业，全日制本科在读。</p></article>
-            <article class="mini-card"><strong>职业定位</strong><p>偏好多模态应用、智能体系统、RAG 架构、AI 产品工程化与高质量前后端整合实现。</p></article>
-            <article class="mini-card"><strong>能力侧重点</strong><p>Prompt 设计、工作流编排、OCR/VLM 融合、可视化看板、Agent 产品化和快速验证能力。</p></article>
-            <article class="mini-card"><strong>英语与表达</strong><p>CET-6，通过技术文档、竞赛答辩与项目资料撰写建立起较强的信息组织能力。</p></article>
+            <article class="mini-card"><strong>技术侧重点</strong><p>多模态识别、LangGraph 智能体、RAG、Prompt 设计、语义检索、前后端链路打通。</p></article>
+            <article class="mini-card"><strong>项目习惯</strong><p>从需求拆解开始，优先做能验证价值的版本，再根据效果优化模型、交互和系统性能。</p></article>
+            <article class="mini-card"><strong>补充能力</strong><p>CET-6，熟悉 Figma、Axure、网页与脚本自动化开发，能快速把方案推进到可展示状态。</p></article>
           </div>
         </section>
 
         <section class="panel fade-up delay-2">
-          <h3>实习与实践</h3>
-          <p class="section-copy">两段经历分别锻炼了我在企业业务链路与创意型 AIGC 产品中的落地方式，一个偏系统自动化，一个偏生成式产品验证。</p>
+          <h3>核心实习经历</h3>
+          <p class="section-copy">这里不做空泛总结，直接写我在两段实习里具体做了什么、做到了什么，以及这些内容为什么有分量。</p>
           <div class="timeline">
             <article class="timeline-item">
               <div class="timeline-head"><strong>蓝色光标（数字）传媒集团 · AI 实习生</strong><span>2025.09 - 2025.12</span></div>
-              <p>参与汽车行业竞品分析 Agent 搭建，使用 LangGraph、LangSmith 与 MCP 数据接入方案完善信息抓取、内容分析和结果生成链路；同时参与 Eazywa 海报设计平台 AIGC 功能开发，围绕文生海报、可编辑生成内容、Prompt 优化与 CI/CD 流程打磨产品 MVP。</p>
+              <p>这一段经历更偏向“把生成式 AI 真正做进产品和业务流程”。</p>
+              <ul>
+                <li>面向汽车行业竞品分析场景，调研可落地的 AIGC 解决方案，参与搭建基于 LangGraph 的智能竞品分析 Agent，负责 Prompt 调优、MCP 数据采集接入及部分代码开发，实现从外部信息抓取、内容分析到结果生成的自动化闭环。</li>
+                <li>参与自建海报设计平台 Eazywa 的 AIGC 功能开发，结合 Nano Banana Pro 落地图像生成与海报编辑能力，推进“文生海报”和“生成内容二次编辑”等核心功能的 MVP 验证，提升 AI 创意内容在营销场景中的可用性和后编辑效率。</li>
+                <li>围绕输出质量、编辑体验与流程可用性持续做实验和迭代，基于 Dify 按 brief 搭建批量化广告/营销文案生成工作流，并利用 Jenkins 完善团队协作开发中的 CI/CD 流程，支撑 AIGC 工具持续开发。</li>
+              </ul>
             </article>
             <article class="timeline-item">
               <div class="timeline-head"><strong>广州前沿信息系统有限公司 · AI 应用开发实习生</strong><span>2025.06 - 2025.09</span></div>
-              <p>实现基于 PaddleOCR + Qwen-VL 的发票结构化提取流水线，识别准确率 95%+；在 Odoo 18.3 中开发 LangGraph 多智能体对话机器人，打通订单上传、用料查询、库存分析与 ECharts 可视化展示，推动业务处理效率提升约 60%。</p>
+              <p>这一段经历更偏向“把 AI 模块直接接进企业系统，做成能跑的业务能力”。</p>
+              <ul>
+                <li>开发基于 OCR + VLM 多模态大模型的发票信息提取模块，集成 PaddleOCR、Qwen-VL 等模型，构建端到端发票处理流水线，实现发票图像到结构化数据的自动化转换，识别准确率达 95%+。</li>
+                <li>设计可配置字段映射机制，支持多种发票格式适配，完成发票信息智能分类与数据清洗，将非结构化图像转成标准 JSON；同时做推理性能优化，将单张处理时间控制在 3 秒内，并支持批量处理。</li>
+                <li>在 Odoo 18.3 中开发智能 Agent 对话机器人，采用 LangGraph 多智能体框架和通义千问 3 大语言模型，实现“订单上传 → 智能用料查询 → 库存需求分析 → 数据可视化展示”的完整流程，处理效率提升约 60%，并支持并发访问和实时展示。</li>
+              </ul>
             </article>
           </div>
         </section>
@@ -387,14 +400,17 @@
 
         <section class="panel fade-up delay-3" id="works">
           <h3>作品精选</h3>
-          <p class="section-copy">除了工程项目，我也持续做生成式视觉创作与提示词结构化设计，把审美目标转成清晰、可复现的生成控制。</p>
+          <p class="section-copy">看多了文字的堆砌？来看点具体的：这张图、对应的创作信息，以及它拿到的一等奖证书，放在一起更能说明问题。</p>
           <div class="gallery-grid">
             <div class="gallery-visual"><img src="images/tang-dance-work.jpg" alt="AI 生图作品《盛唐霓裳：玄宗与贵妃的宫廷共舞》" /></div>
             <div class="gallery-copy">
               <h4>《盛唐霓裳：玄宗与贵妃的宫廷共舞》</h4>
-              <p>作品围绕盛唐宫廷艺术场景展开，重点不是“帝观妃舞”的静态姿态，而是双人共舞的动态互动。通过人物姿态、衣料流动、环境群像和宫廷纵深的综合控制，强化情绪连接与历史质感。</p>
-              <p>创作说明强调了全景深构图、帝国红与鎏金配色、梨园乐舞语境、丝绸材质还原与动态袖摆张力，目标是规避常见 AI 绘图中背景模糊、肢体失衡和叙事弱的问题，做出更接近电影化定格的画面。</p>
+              <p>作品围绕盛唐宫廷艺术场景展开，刻意避开“妃舞帝观”的静态构图，而是把重点放在唐玄宗与杨贵妃双人共舞的动态关系上，让画面同时具备叙事性、动势和场面调度。</p>
+              <p>创作时重点控制了全景深、宫廷空间纵深、帝国红与鎏金主色、丝绸材质与水袖轨迹，目标是解决 AI 绘图常见的背景虚化、动作僵硬和叙事感不足问题，尽量做出接近电影定格的一帧。</p>
               <div class="tag-row"><span class="tag">AIGC 视觉创作</span><span class="tag">提示词结构化</span><span class="tag">历史题材</span><span class="tag">写实风格控制</span></div>
+              <div class="paper-cover" style="margin-top: 10px;">
+                <img src="images/ai-image-award.jpg" alt="AI生成世界一等奖奖状" />
+              </div>
             </div>
           </div>
         </section>
@@ -434,12 +450,6 @@
               <div class="tag-row"><span class="tag">Mathematical Modeling</span><span class="tag">International Contest</span></div>
             </article>
 
-            <article class="award-card">
-              <div class="award-cover" style="margin-bottom: 16px;"><img src="images/ai-image-award.jpg" alt="AI生成世界 AI 图像图形技术创新大赛一等奖证书" /></div>
-              <h4>AI 生成世界图像创新大赛一等奖</h4>
-              <p>“2025年 AI 生成世界”AI 图像图形技术创新大赛 AI 生图赛道一等奖，与页面中的《盛唐霓裳》作品形成直接对应。</p>
-              <div class="tag-row"><span class="tag">AI Image</span><span class="tag">一等奖</span><span class="tag">Visual Creation</span></div>
-            </article>
           </div>
         </section>
 
@@ -473,15 +483,6 @@
           </div>
         </section>
 
-        <section class="panel fade-up delay-3" id="contact">
-          <h3>联系与协作</h3>
-          <p class="section-copy">如果你希望聊 AI 应用落地、多模态工程、智能体工作流、项目合作或比赛交流，可以直接联系我。</p>
-          <div class="contact-grid">
-            <div class="contact-card"><strong>邮箱</strong><a href="mailto:zawonyee@163.com">zawonyee@163.com</a></div>
-            <div class="contact-card"><strong>电话</strong><a href="tel:13923082530">13923082530</a></div>
-            <div class="contact-card"><strong>城市 / 学校</strong><p>广东江门 / 广州 · 广东技术师范大学</p></div>
-          </div>
-        </section>
       </div>
     </main>
 
