@@ -2,146 +2,132 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>黄梓皓 - 个人简历</title>
-<meta name="description" content="黄梓皓个人简历：AI应用开发、智能体、RAG与多模态工程实践。">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄梓皓 - 简历</title>
+<meta name="description" content="黄梓皓的 PDF 简历在线预览与下载">
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#d7d7d7;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;color:#222}
-body{display:flex;justify-content:center;align-items:flex-start;padding:28px 14px}
-.stage{position:relative;width:1080px}
-.resume{position:absolute;left:0;top:0;width:1080px;min-height:1527px;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.18);transform-origin:top left}
-.header{height:82px;background:linear-gradient(#fafafa,#dedede);display:flex;align-items:center;justify-content:center;position:relative;border-radius:28px 28px 20px 20px}
-.header h1{margin:0;font-size:44px;line-height:1;font-weight:900;letter-spacing:1px}
-.dots{position:absolute;display:flex;gap:13px;top:34px}.dots.left{left:112px}.dots.right{right:112px}.dot{width:16px;height:16px;background:#626262;border-radius:50%}
-.content{padding:9px 50px 32px 72px}
-.section{position:relative;padding-left:38px;margin-top:5px}
-.section:before{content:"";position:absolute;left:10px;top:31px;bottom:-8px;border-left:2px dotted #686868}
-.section:last-child:before{bottom:28px}
-.section-title{height:43px;display:flex;align-items:center;gap:12px;margin-left:-48px;font-size:27px;font-weight:900}
-.icon{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#626262;color:white;font-size:14px;font-weight:800;flex:0 0 auto;border:3px solid white;box-shadow:0 0 0 1px #626262}
-.personal{display:grid;grid-template-columns:1.25fr 1.25fr 170px;gap:8px 32px;align-items:start;margin-top:-5px;padding:0 10px 2px 0}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px;grid-column:1/3;font-size:16px;padding-top:2px}
-.info-item{display:flex;align-items:center;gap:10px}.mini{width:18px;text-align:center;color:#696969;font-weight:700}
-.photo{grid-column:3;grid-row:1/3;width:150px;height:184px;object-fit:cover;justify-self:end;margin-top:-39px;border-radius:2px}
-.edu-line{display:flex;align-items:center;justify-content:flex-start;gap:30px;font-size:18px;font-weight:700;margin:0 0 4px 1px}
-.edu-line .date{width:150px}
-.experience{margin-top:2px}
-.job{margin-bottom:8px}
-.job-head{display:grid;grid-template-columns:1.35fr .8fr 1fr;align-items:center;gap:8px;font-size:21px;font-weight:900;line-height:1.2;margin-bottom:4px}
-.job-head .date{text-align:center}.job-head .role{text-align:right}
-.job p,.project p,.skill p{margin:0 0 3px 0;font-size:13.5px;line-height:1.55;text-indent:2em;text-align:justify}
-.project{margin-bottom:8px}
-.project-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;font-size:18px;font-weight:900;margin-bottom:3px}
-.project-head a{color:#222;text-decoration:none;font-size:15px;word-break:break-all}
-.campus-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px 34px;margin-top:-2px}
-.campus-grid div{position:relative;padding-left:16px;font-size:13.5px;line-height:1.6}
-.campus-grid div:before{content:"•";position:absolute;left:0;font-weight:900}
-.skills{display:grid;gap:3px;margin-top:-2px}
-.skill{display:grid;grid-template-columns:78px 1fr;gap:4px;font-size:13.5px;line-height:1.55}
-.skill strong{font-weight:900}.skill p{text-indent:0;margin:0}
-@media print{html,body{background:#fff;padding:0}.resume{box-shadow:none;border-radius:0}.header{border-radius:0}.stage{width:1080px!important;height:1527px!important}.resume{transform:none!important}}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #f2f4f7;
+  color: #111827;
+  font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #d9dee7;
+  backdrop-filter: blur(12px);
+}
+
+.title {
+  min-width: 0;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.title p {
+  margin: 3px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 6px;
+  background: #111827;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.download:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.viewer {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  border: 0;
+  background: #fff;
+}
+
+.fallback {
+  display: grid;
+  min-height: calc(100vh - 64px);
+  place-items: center;
+  padding: 32px;
+  text-align: center;
+}
+
+.fallback a {
+  color: #0f766e;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 12px 16px;
+  }
+
+  .download {
+    width: 100%;
+  }
+
+  .viewer,
+  .fallback {
+    min-height: calc(100vh - 105px);
+  }
+}
 </style>
 </head>
 <body>
-<div class="stage" id="stage">
-<main class="resume" id="resume">
-<header class="header">
-<div class="dots left"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-<h1>PERSONAL RESUME</h1>
-<div class="dots right"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+<header class="toolbar">
+  <div class="title">
+    <h1>黄梓皓简历</h1>
+    <p>PDF 原文件在线预览</p>
+  </div>
+  <a class="download" href="resume.pdf" download="黄梓皓附件简历.pdf">下载 PDF</a>
 </header>
-<div class="content">
-<section class="section">
-<div class="section-title"><span class="icon">INFO</span><span>个人信息</span></div>
-<div class="personal">
-<div class="info-grid">
-<div class="info-item"><span class="mini">●</span><span>姓名：黄梓皓</span></div>
-<div class="info-item"><span class="mini">▥</span><span>英语证书：CET-6</span></div>
-<div class="info-item"><span class="mini">☎</span><span>手机号码：13923082530</span></div>
-<div class="info-item"><span class="mini">✉</span><span>邮箱：zawonyee@163.com</span></div>
-</div>
-<img class="photo" src="myphoto.jpg" alt="黄梓皓证件照">
-</div>
-</section>
-<section class="section">
-<div class="section-title"><span class="icon">EDU</span><span>教育背景</span></div>
-<div class="edu-line"><span class="date">2023.9-2027.6</span><span>广东技术师范大学</span><span>人工智能专业</span><span>全日制本科</span></div>
-</section>
-<section class="section experience">
-<div class="section-title"><span class="icon">EXP</span><span>实习经历</span></div>
-<article class="job">
-<div class="job-head"><span>蓝色光标数字传媒集团</span><span class="date">2025.9~2025.12</span><span class="role">角色：AI agent实习生</span></div>
-<p>负责Eazywa海报平台的AIGC创作能力策略拆解，将营销Brief分解为主题、视觉风格、主体元素、版式结构和文案约束等创作意图，建立“意图标签—模型能力—生成链路”的映射与分流规则，完成候选方案验证并推动文生海报、生成内容二次编辑等能力进入MVP。</p>
-<p>搭建图片生成Benchmark，覆盖多类营销Brief，从指令遵循、主体保真、文字准确、视觉质量、品牌一致性和可编辑性等维度评估Nano Banana Pro生成效果；基于失败样例迭代Prompt模板、约束策略与生成链路，使首轮可用率由30%提升至55%，平均重试次数下降30%。</p>
-<p>将“生成结果被选中进入二次编辑或导出”定义为有效采用，跟踪生成—编辑—导出漏斗并复盘低采纳样本；通过优化模型能力分流和交互流程，使内部验收样本中的海报采用率达到84%，单个Brief的初稿产出时间由120分钟缩短至15分钟。</p>
-<p>针对汽车竞品分析场景，基于LangGraph拆解采集、分析与报告生成等Agent节点，负责Prompt、MCP数据接入及部分代码开发；使用LangSmith监控节点输入输出、工具调用、任务耗时和异常重试，形成失败案例回流与策略迭代闭环。</p>
-</article>
-<article class="job">
-<div class="job-head"><span>广州前沿信息系统有限公司</span><span class="date">2025.6~2025.9</span><span class="role">角色：AI应用开发实习生</span></div>
-<p>负责OCR+VLM多模态票据识别方案的效果目标定义与评测，基于不同票据格式及清晰度样本建立字段级Benchmark，以字段准确率、漏识别率、JSON格式完整率和推理耗时为核心指标，对PaddleOCR与Qwen-VL组合方案进行测试迭代，字段识别准确率达到95%+，单张处理时间控制在3秒内。</p>
-<p>基于错误样本分析优化字段映射、Prompt及数据清洗策略，支持不同票据格式的动态适配和批量处理，完成从图像输入、模型识别、结果校验到标准JSON输出的完整能力上线。</p>
-<p>负责Odoo订单Agent的技术方案拆解，基于LangGraph与Qwen3将用户需求分流至文件解析、用料查询、库存分析和结果可视化等任务节点，并围绕任务完成率、工具调用成功率、异常重试和端到端耗时持续监控优化，使订单处理效率提升75%。</p>
-</article>
-<article class="job">
-<div class="job-head"><span>江门市友升玻璃有限公司</span><span class="date">2024.6~2024.9</span><span class="role">角色：视频内容运营剪辑</span></div>
-<p>负责公司抖音、微信公众号、视频号等新媒体矩阵运营，搭建从内容创作、用户运营到转化变现的全链路体系。原创工业玻璃工艺科普短视频。</p>
-</article>
-<article class="job">
-<div class="job-head"><span>江门市乐骑摩托有限公司</span><span class="date">2023.6~2023.8</span><span class="role">角色：账号运营与电商助理</span></div>
-<p>负责公司蓝V账号、直播引流、电商平台等线上运营工作，搭建从内容策划、数据监控到商品转化的运营闭环。参与商品详情页维护与宣传物料设计。</p>
-</article>
-</section>
-<section class="section">
-<div class="section-title"><span class="icon">PRO</span><span>项目经历</span></div>
-<article class="project">
-<div class="project-head"><span>CodexPro｜ChatGPT对话模式本地编码工具</span><span>GitHub获1.4k+ Stars</span><a href="https://github.com/rebel0789/codexpro">https://github.com/rebel0789/codexpro</a></div>
-<p>针对ChatGPT对话模式无法直接访问本地仓库、开发者需要在网页与IDE间反复复制代码的问题，参与开发CodexPro，通过Developer Mode与MCP将当前ChatGPT会话连接至指定代码仓库。</p>
-<p>项目由ChatGPT会话负责模型推理，CodexPro仅提供仓库分析、代码检索、受控编辑、命令验证和变更审查工具，自身不代理模型、不内置降级模型，也无需额外配置或消耗API Key额度。</p>
-<p>通过工作区隔离、令牌认证、写入权限和危险命令拦截控制执行风险，形成“分析—修改—验证—审查”的本地开发闭环，项目GitHub累计获得1.4k+ Stars、130 Forks。</p>
-</article>
-<article class="project">
-<div class="project-head"><span>竞品情报分析 Agent 工作台｜LangGraph + RAG + 多源资料分析</span><a href="https://auto.zihaohuang.me/">https://auto.zihaohuang.me/</a></div>
-<p>面向品牌竞品资料分散、人工调研周期长和结论缺少证据支撑等问题，将研究任务拆解为Scope、Research、Extract、Evaluate、Write五阶段工作流，并根据研究意图与证据充分度动态分流任务。</p>
-<p>基于BGE Embedding与FAISS/Chroma搭建RAG模块，引入Query Rewrite、证据评估和自动重试机制；通过LangSmith监控节点输入输出、工具调用、任务耗时与异常链路，形成失败案例回流闭环。</p>
-<p>构建涵盖字段完整率、引用覆盖率、检索命中率、幻觉率、平均耗时和Token成本的轻量Benchmark，通过迭代Prompt、topK、chunk与重试阈值，持续提升报告生成质量和任务执行稳定性。</p>
-</article>
-</section>
-<section class="section">
-<div class="section-title"><span class="icon">CAMP</span><span>校园经历</span></div>
-<div class="campus-grid">
-<div>面向高职学生，根据需求文档为不同专业设计coze智能体平台的智能体实验手册，并配套录制从0-1搭建过程的讲解视频</div>
-<div>蓝桥杯智能体设计与开发全国总决赛二等奖</div>
-<div>编写数字教材《数据采集与预处理技术》（爬虫、数据处理等）</div>
-<div>2025数维杯国际大学生数学建模竞赛一等奖</div>
-<div>ACM-CCPC第二十二届广东省大学生程序设计竞赛银奖</div>
-</div>
-</section>
-<section class="section">
-<div class="section-title"><span class="icon">SKILL</span><span>专业技能</span></div>
-<div class="skills">
-<div class="skill"><strong>技术开发：</strong><p>具备Python、SQL开发与数据分析能力，了解TypeScript及前端基础，可完成Web应用、接口联调、脚本自动化、数据采集和PoC部署，具备计算机视觉、自然语言处理、图像处理、机器学习与数据挖掘等专业技术背景。</p></div>
-<div class="skill"><strong>AI应用：</strong><p>熟悉LangGraph、LangSmith、RAG、MCP与Skill工具调用，具备Prompt设计、上下文规划、多阶段工作流编排及异常链路调试经验，了解LLM、VLM与图像生成模型的能力差异。</p></div>
-<div class="skill"><strong>产品与创作：</strong><p>能够将业务需求拆解为功能模块、数据流程和验证方案，熟练使用Stitch、Pencil完成交互原型；具备营销文案、海报生成和短视频内容经验，理解生成内容的筛选、编辑与交付流程。</p></div>
-<div class="skill"><strong>研发：</strong><p>能够使用Cursor、Claude Code、Codex快速完成技术验证与迭代，熟悉LoRA微调机制，理解其在轻量部署和多场景适配中的价值；关注Hugging Face、OpenBMB等开源社区动态，具备模型能力产品化抽象能力。</p></div>
-</div>
-</section>
-</div>
-</main>
-</div>
-<script>
-(function(){
-const stage=document.getElementById('stage');
-const resume=document.getElementById('resume');
-function fit(){
-const max=Math.min(1080,window.innerWidth-28);
-const scale=max/1080;
-resume.style.transform='scale('+scale+')';
-stage.style.width=max+'px';
-stage.style.height=(resume.offsetHeight*scale)+'px';
-}
-fit();window.addEventListener('resize',fit);
-})();
-</script>
+
+<object class="viewer" data="resume.pdf" type="application/pdf" aria-label="黄梓皓附件简历 PDF 预览">
+  <div class="fallback">
+    <p>当前浏览器无法直接预览 PDF，请 <a href="resume.pdf" download="黄梓皓附件简历.pdf">下载简历 PDF</a> 查看。</p>
+  </div>
+</object>
 </body>
 </html>
